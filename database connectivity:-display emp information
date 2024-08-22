@@ -1,0 +1,41 @@
+<?php
+$con=mysqli_connect("localhost","root","");
+if(!$con)
+     die("error in connection");
+mysqli_select_db($con,"rbnb");
+$res=mysqli_query($con,"select * from emp");
+while($row=mysqli_fetch_array($res))
+{
+	echo("<br><br>roll no=".$row["eno"]);
+	echo("<br><br>Name=".$row["1"]);
+	echo("<br><br>sal=".$row["sal"]);
+}
+	mysqli_close($con);
+?>
+	
+
+output:-
+roll no=2
+
+Name=om
+
+sal=5555
+
+roll no=2
+
+Name=sai
+
+sal=40000
+
+roll no=3
+
+Name=ram
+
+sal=52000
+
+roll no=6
+
+Name=sham
+
+sal=30000
+
