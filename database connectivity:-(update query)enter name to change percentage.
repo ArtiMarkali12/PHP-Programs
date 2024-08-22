@@ -1,0 +1,31 @@
+<html>
+<body>
+<form method="post" action="#">
+Enter name to change the percentage:
+<input type="text"name="t1"><br>
+enter percentage:
+<input type="text"name="t2"><br>
+<input type="submit" value="delete">
+
+</form>
+</body>
+</html>
+
+
+<?php
+$con=mysqli_connect("localhost","root","");
+if(!$con)
+   die("error in connection....");
+$nm=$_POST["t1"];
+$p=$_POST["t2"];
+mysqli_select_db($con,"rbnb");
+$k=mysqli_query($con,"update student set per=$p where sname='$nm'");
+  if($k==true)
+	echo("record updated..");
+	var_dump($k);
+	
+mysqli_close($con);
+?>
+
+
+output:-record updated..bool(true)
